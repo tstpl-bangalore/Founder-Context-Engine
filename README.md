@@ -1,20 +1,18 @@
-# Portfolio Memory 
+# Founder Memory
 
-Every month, I managed a portfolio of 10+ founders - calls and notes across Excel, CRM.
+Every month, I managed a portfolio of 10+ founders. Calls and notes across Excel, CRM.
 
-Now, CRMs and Excel store information. They don't synthesize it.
+CRMs and Excel store information. They don't synthesize it.
 
-Before a call I still have to check — what did we discuss last time? What's unresolved across the last 3 calls.
+Before a call I still have to check — what did we discuss last time? What's unresolved across the last 3 calls?
 
-So I built this. A bunch of Claude Code skills - to manage evolving relationship state.
+So I built this.
 
-**Before my 1st July call, I should know: 15th June, 1st June, 15th May — what happened, what's pending.**
+**Before my 1st July call, I should know: 15th June, 1st June, 15th May. What happened, what's pending.**
 
-**Again, for next meeting on 15th July, now I should know: 1st July, 15th June, 1st June meetings.**
+**For my 15th July call, I should know: 1st July, 15th June, 1st June. Same thing, rolled forward.**
 
-That's what this Claude Code skill does.
-Every meeting logged, last 3 meeting summaries always on top — when needed.
-
+That's what this does. Every meeting logged. Last 3 summaries always on top, when needed.
 
 ---
 
@@ -25,20 +23,13 @@ Every meeting logged, last 3 meeting summaries always on top — when needed.
 
 ---
 
-## For teams
-
-After a call, whoever was on it just drops their notes in the founder's folder. No format, no template. Run `/update-notes-founder` and it pulls everything together — sorted, merged, done.
-
-
----
-
 ## How it works
 
 Before your call with Vineet:
 ```
 /prep-for-founder vineet_khattar
 ```
-Pulls up where things stand. What was discussed, what's open. Takes a second.
+Pulls up where things stand: what was discussed, what's open. Takes a second.
 
 After the call, drop your notes in his folder and run:
 ```
@@ -65,6 +56,12 @@ Key context before next call:
 
 ---
 
+## For teams
+
+After a call, whoever was on it just drops their notes in the founder's folder. No format, no template. Run `/update-notes-founder` and it pulls everything together. Sorted, merged, done.
+
+---
+
 ## Setup
 
 Clone this repo, open in Claude Code. Make a folder inside `contacts/` for each person — that's where everything lives.
@@ -80,18 +77,20 @@ After your first `/update-notes-founder`, Claude creates a summary file and a ru
 
 ---
 
-## How it's built
+## Architecture
 
-Built as a Claude Code skill for VS Code — structured prompts that define agent behavior for `/prep-for-founder` and `/update-notes-founder`.
+```
+.claude/skills/
+├── prep-for-founder/         # Read-only pre-call briefing
+│   └── SKILL.md              # Reads summary file, outputs as-is — no writes
+└── update-notes-founder/     # Post-call note processing
+    └── SKILL.md              # 8-step pipeline: find drafts → generate → confirm → write
 
-No external backend. State lives in a local file-based database: each founder gets a folder with a running summary and dated log entries, all plain markdown.
-
-Local markdown means portable, inspectable, version controllable, privacy-friendly, and zero backend maintenance.
-
-Claude handles:
-- **Context synthesis** — reads the summary + recent logs, surfaces what matters before a call
-- **Note processing** — turns raw, unstructured call notes into structured log entries
-- **Memory management** — rewrites the summary after each call so the last 3 meetings are always current
+contacts/[firstname_lastname]/
+├── [name]_summary.md         # Always current: status + last 3 meetings
+├── [name]_log.md             # Append only: full dated meeting history
+└── [draft files]             # Any other file = raw notes, consumed on /update
+```
 
 ---
 
