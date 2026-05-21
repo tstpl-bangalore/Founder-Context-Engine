@@ -1,22 +1,29 @@
-# Founder Meeting Notes
+# Founder Meeting Skill
 
-Most people use Claude like a chatbot - ask something, get an answer, move on. That's fine for one-off stuff.
+In a VC context across a portfolio of 20+ founders, the difference between showing up with context and showing up cold isn't just preparation — it's the quality of the relationship.
 
-But you're talking to the same founders every two weeks. Stuff compounds. Context matters.
+**Before your 1st July call you should just know: 15th June, 1st June, 15th May — what happened, what's pending.**
 
-Before your 1st July call you should just know calls of 15th June, 1st June, 15th May, what happened, what's pending. Not because you dug through notes. Because it's just there.
+**Similarly, Next meeting 15th July — get a summary of 1st July, 15th June, 1st June.**
 
-That's what this does. Every meeting logged, last 3 always referenced. You walk in knowing. Every time.
+That's what this Claude Code skill does.
+Every meeting logged, last 3 meeting summaries always on top — when needed.
+You walk in knowing. Every time.
 
-In a VC context, this compounds fast. Across a portfolio of 20+ founders, the difference between showing up with context and showing up cold isn't just preparation — it's the quality of the relationship, the pattern recognition across companies, and ultimately the signal you catch early. This keeps all of that live without adding any workflow overhead.
+---
+
+![Update notes skill](docs/images/1.%20update-notes%20Skill.png)
+![Update notes skill 2](docs/images/2.%20update-notes%20Skill%20%20.png)
+![Prep before meeting](docs/images/3.prep-before-meeting%20skill.png)
+![Prep before meeting 2](docs/images/4.%20prep-before-meeting%20skill.png)
 
 ---
 
 ## For teams
 
-Anyone can drop notes into a founder's folder after a call, no format needed. `/update` finds everything, sorts by timeline, merges into one record.
+After a call, whoever was on it just drops their notes in the founder's folder. No format, no template. Run `/update` and it pulls everything together — sorted, merged, done.
 
-In a firm where multiple partners touch the same portfolio company — one does the initial check-in, another sits on the board, a third catches a serendipitous coffee — the context stays shared. No one walks into a call blind because they weren't on the last one. The folder is the single source of truth for that relationship, and anyone on the team can pick it up mid-thread.
+Multiple partners touching the same company is fine. One did the intro call, another's on the board, someone grabbed coffee last week. Doesn't matter. The folder has it all. Nobody walks in cold because they missed the last one.
 
 ---
 
@@ -26,33 +33,33 @@ Before your call with Vineet:
 ```
 /prep vineet_khattar
 ```
-Current status, last few conversations. Ready in seconds.
+Pulls up where things stand. What was discussed, what's open. Takes a second.
 
 After the call, drop your notes in his folder and run:
 ```
 /update vineet_khattar
 ```
-Claude writes up a log entry, updates the summary, shows you both. You confirm, it saves.
+Claude turns them into a proper log entry, rewrites the summary, shows you both before saving anything. You confirm, it's done.
 
 ---
 
 ## Setup
 
-Clone this repo, open in Claude Code. Each founder gets a folder — that's where their history lives and where you drop notes after calls. Create one manually inside `contacts/` for each person you track, named `firstname_lastname`.
+Clone this repo, open in Claude Code. Make a folder inside `contacts/` for each person — that's where everything lives.
 
 ```
 contacts/vineet_khattar/
 ```
 
+Drop notes there after calls. That's the whole setup.
+
 ---
 
 ## How it's built
 
-Built as a Claude Code skill for VS Code — structured prompts that define
-agent behavior for `/prep` and `/update`.
+Built as a Claude Code skill for VS Code — structured prompts that define agent behavior for `/prep` and `/update`.
 
-No external backend. State lives in a local file-based database: each founder
-gets a folder with a running summary and dated log entries, all plain markdown.
+No external backend. State lives in a local file-based database: each founder gets a folder with a running summary and dated log entries, all plain markdown.
 
 Claude handles:
 - **Context synthesis** — reads the summary + recent logs, surfaces what matters before a call
