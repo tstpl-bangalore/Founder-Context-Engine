@@ -1,6 +1,6 @@
 # Portfolio Memory 
 
-I managed a portfolio of 10+ founders, every month: calls and notes across Excel, CRM.
+Every month, I managed a portfolio of 10+ founders - calls and notes across Excel, CRM.
 
 Now, CRMs and Excel store information. They don't synthesize it. 
 Before a call I still have to check — what did we discuss last time? What's unresolved?
