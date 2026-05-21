@@ -1,4 +1,4 @@
-# Founder Memory
+# Founder-Context-Engine
 
 Every month, I managed a portfolio of 10+ founders. Calls and notes across Excel, CRM.
 
