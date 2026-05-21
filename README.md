@@ -4,9 +4,13 @@ Every month, I managed a portfolio of 10+ founders. Calls and notes across Excel
 
 CRMs and Excel store information. They don't synthesize it.
 
-Before a call I still have to check — what did we discuss last time? What's unresolved across the last 3 calls?
+Before a call, I still have to check — what did we discuss last time? What's unresolved across the last 3 calls?
 
 So I built this.
+
+- Structured log updated after each meeting
+- Rolling memory across every founder
+- Pre-call briefing in one command (30s)
 
 **Before my 1st July call, I should know: 15th June, 1st June, 15th May. What happened, what's pending.**
 
@@ -24,6 +28,18 @@ That's what this does. Every meeting logged. Last 3 summaries always on top, whe
 ---
 
 ## How it works
+
+```
+Raw notes
+   ↓
+update-notes-founder
+   ↓
+summary.md + log.md
+   ↓
+prep-for-founder
+   ↓
+Pre-call briefing
+```
 
 Before your call with Vineet:
 ```
