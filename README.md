@@ -1,6 +1,7 @@
-# Founder Meeting Skill
+# Portfolio Memory 
 
-In a VC context across a portfolio of 20+ founders, the difference between showing up with context and showing up cold isn't just preparation — it's the quality of the relationship.
+In a VC context across a portfolio of 20+ founders, 
+the difference between showing up with context and showing up cold isn't just preparation defines the quality of the relationship.
 
 **Before your 1st July call you should just know: 15th June, 1st June, 15th May — what happened, what's pending.**
 
@@ -23,7 +24,6 @@ You walk in knowing. Every time.
 
 After a call, whoever was on it just drops their notes in the founder's folder. No format, no template. Run `/update` and it pulls everything together — sorted, merged, done.
 
-Multiple partners touching the same company is fine. One did the intro call, another's on the board, someone grabbed coffee last week. Doesn't matter. The folder has it all. Nobody walks in cold because they missed the last one.
 
 ---
 
