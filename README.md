@@ -2,11 +2,12 @@
 
 Every month, I managed a portfolio of 10+ founders - calls and notes across Excel, CRM.
 
-Now, CRMs and Excel store information. They don't synthesize it. 
+Now, CRMs and Excel store information. They don't synthesize it.
 
-Before a call I still have to check — what did we discuss last time? What's unresolved across last 3 calls. 
+Before a call I still have to check — what did we discuss last time? What's unresolved across the last 3 calls.
 
-So I built this. A bunch of Claude Code skills - to manage evolving relationship state 
+So I built this. A bunch of Claude Code skills - to manage evolving relationship state.
+
 **Before my 1st July call, I should know: 15th June, 1st June, 15th May — what happened, what's pending.**
 
 **Again, for next meeting on 15th July, now I should know: 1st July, 15th June, 1st June meetings.**
