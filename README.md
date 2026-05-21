@@ -30,15 +30,40 @@ That's what this does. Every meeting logged. Last 3 summaries always on top, whe
 ## How it works
 
 ```
-Raw notes
-   ↓
-update-notes-founder
-   ↓
-summary.md + log.md
-   ↓
-prep-for-founder
-   ↓
-Pre-call briefing
+                 ┌────────────────────┐
+                 │   Raw Meeting Notes │
+                 └─────────┬──────────┘
+                           │
+                           ▼
+               ┌──────────────────────┐
+               │ update-notes-founder │
+               │  (AI synthesis step) │
+               └─────────┬────────────┘
+                         │
+          ┌──────────────┴──────────────┐
+          ▼                             ▼
+┌──────────────────┐       ┌────────────────────┐
+│ summary.md       │       │ log.md             │
+│                  │       │                    │
+│ - current status │       │ - append-only      │
+│ - open threads   │       │ - dated history    │
+│ - last 3 meetings│       │ - full context     │
+└─────────┬────────┘       └─────────┬──────────┘
+          │                          │
+          └──────────┬───────────────┘
+                     ▼
+         ┌──────────────────────────┐
+         │ prep-for-founder         │
+         │ (pre-call retrieval)     │
+         └──────────┬───────────────┘
+                    ▼
+      ┌──────────────────────────────┐
+      │ AI-generated pre-call brief  │
+      │                              │
+      │ - current state              │
+      │ - unresolved items           │
+      │ - longitudinal context       │
+      └──────────────────────────────┘
 ```
 
 Before your call with Vineet:
